@@ -10,7 +10,7 @@
     }
 
     // This is your option name where all the Redux data is stored.
-    $opt_name = "mobster_demo";
+    $opt_name = "mobster_options";
 
     /**
      * ---> SET ARGUMENTS
@@ -264,38 +264,210 @@
     ) );
 
     Redux::setSection( $opt_name, array(
-        'title'      => __( 'Text', 'redux-framework-demo' ),
-        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/text/" target="_blank">//docs.reduxframework.com/core/fields/text/</a>',
-        'id'         => 'opt-text-subsection',
+        'title'      => __( 'Homepage Layout', 'redux-framework-demo' ),
+        // 'desc'       => __( 'You can find Homepage Layouts Here ', 'redux-framework-demo' ),
+        'id'         => 'homepage_layout_manager',
         'subsection' => true,
-        'fields'     => array(
+        'fields' => array(
             array(
-                'id'       => 'text-example',
-                'type'     => 'text',
-                'title'    => __( 'Text Field', 'redux-framework-demo' ),
-                'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
-                'default'  => 'Default Text',
+                'id'      => 'homepage-layout',
+                'type'    => 'sorter', 
+                // 'title'    => __( 'Homepage Layout Manager', 'redux-framework-demo' ),
+                'desc'     => __( 'Organize how you want the layout to appear on the homepage.', 'redux-framework-demo' ),
+                // 'subtitle' => __( 'Homepage Layout subtitle.', 'redux-framework-demo' ),
+                'options' => array(
+                    'enabled'  => array(
+                        'services' => 'Services',
+                        'bussiness_promo'     => 'Business Promotion',
+                        'features' => 'Features',
+                        'pricing'   => 'Pricing',
+                        'testimonials'   => 'Testimonials',
+                        'faqs'   => 'FAQs',
+                        'partners'   => 'Partners',
+                    ),
+                    'disabled' => array(
+                    )
+                ),
+            )
+        )
+    ) );
+
+    ## Services Layout
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'Services Layout', 'redux-framework-demo' ),
+        'desc'       => __( 'You can find Services Layouts Here ', 'redux-framework-demo' ),
+        'id'         => 'services_layout_manager',
+        'subsection' => true,
+        'fields' => array(
+            array(
+                'id'      => 'services-image',
+                'type'    => 'media', 
+                'title'    => __( 'Service Image', 'redux-framework-demo' ),
+                'desc'     => __( 'Upload service image here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Upload Service Image.', 'redux-framework-demo' ), 
+                'default'    => '//localhost/themeDev/practise_theme/wp-content/uploads/2020/11/concept.png', 
+            ),
+            array(
+                'id'      => 'services-title',
+                'type'    => 'text', 
+                'title'    => __( 'Service Title', 'redux-framework-demo' ),
+                'desc'     => __( 'Add your Service Title here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add your Service Title.', 'redux-framework-demo' ), 
+                'default'    => 'Secure Payment', 
+            ),
+            array(
+                'id'      => 'services-content',
+                'type'    => 'textarea', 
+                'title'    => __( 'Service Content', 'redux-framework-demo' ),
+                'desc'     => __( 'Add Service Content here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add Service Content', 'redux-framework-demo' ), 
+                'default'    => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates esse, sunt reprehenderit', 
             ),
         )
     ) );
 
+    ## Bussiness Promotion
     Redux::setSection( $opt_name, array(
-        'title'      => __( 'Text Area', 'redux-framework-demo' ),
-        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/textarea/" target="_blank">//docs.reduxframework.com/core/fields/textarea/</a>',
-        'id'         => 'opt-textarea-subsection',
+        'title'      => __( 'Bussiness Promotion', 'redux-framework-demo' ),
+        'desc'       => __( 'You can find Bussiness Promotion Here ', 'redux-framework-demo' ),
+        'id'         => 'bussiness_promotion_manager',
         'subsection' => true,
-        'fields'     => array(
+        'fields' => array(
             array(
-                'id'       => 'textarea-example',
-                'type'     => 'textarea',
-                'title'    => __( 'Text Area Field', 'redux-framework-demo' ),
-                'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
-                'default'  => 'Default Text',
+                'id'      => 'bussiness-image',
+                'type'    => 'media', 
+                'title'    => __( 'Bussiness Image', 'redux-framework-demo' ),
+                'desc'     => __( 'Upload Bussiness image here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Upload Bussiness Image.', 'redux-framework-demo' ), 
+                'default'    => '//localhost/themeDev/practise_theme/wp-content/uploads/2020/11/concept.png', 
+            ),
+            array(
+                'id'      => 'bussiness-title',
+                'type'    => 'text', 
+                'title'    => __( 'Bussiness Title', 'redux-framework-demo' ),
+                'desc'     => __( 'Add your Bussiness Title here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add your Bussiness Title.', 'redux-framework-demo' ), 
+                'default'    => 'Secure Payment', 
+            ),
+            array(
+                'id'      => 'bussiness-content',
+                'type'    => 'textarea', 
+                'title'    => __( 'Bussiness Content', 'redux-framework-demo' ),
+                'desc'     => __( 'Add Bussiness Content here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add Bussiness Content', 'redux-framework-demo' ), 
+                'default'    => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates esse, sunt reprehenderit', 
+            ),
+            array(
+                'id'      => 'bussiness-button-link',
+                'type'    => 'text', 
+                'title'    => __( 'Bussiness Link', 'redux-framework-demo' ),
+                'desc'     => __( 'Add your Bussiness Link here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add your Bussiness Link.', 'redux-framework-demo' ), 
+                'default'    => 'https://www.facebook.com/', 
+            ),
+            array(
+                'id'      => 'bussiness-button',
+                'type'    => 'text', 
+                'title'    => __( 'Service Button', 'redux-framework-demo' ),
+                'desc'     => __( 'Add your Bussiness Button here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add your Bussiness Button.', 'redux-framework-demo' ), 
+                'default'    => 'See Addons', 
             ),
         )
     ) );
+
+    ## All Features
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'All Features', 'redux-framework-demo' ),
+        'desc'       => __( 'You can find All Features Here ', 'redux-framework-demo' ),
+        'id'         => 'all_features_manager',
+        'subsection' => true,
+        'fields' => array(
+            array(
+                'id'      => 'all_features_image',
+                'type'    => 'media', 
+                'title'    => __( 'All Features Image', 'redux-framework-demo' ),
+                'desc'     => __( 'Upload All Features image here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Upload All Features Image.', 'redux-framework-demo' ), 
+                'default'    => '//localhost/themeDev/practise_theme/wp-content/uploads/2020/11/concept.png', 
+            ),
+            array(
+                'id'      => 'all_features_icon_image',
+                'type'    => 'media', 
+                'title'    => __( 'All Features Icon Image', 'redux-framework-demo' ),
+                'desc'     => __( 'Upload All Features Icon  image here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Upload All Features Icon  Image.', 'redux-framework-demo' ), 
+                'default'    => '//localhost/themeDev/practise_theme/wp-content/uploads/2020/11/concept.png', 
+            ),
+            array(
+                'id'      => 'all_features_title',
+                'type'    => 'text', 
+                'title'    => __( 'All Features Title', 'redux-framework-demo' ),
+                'desc'     => __( 'Add your All Features Title here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add your All Features Title.', 'redux-framework-demo' ), 
+                'default'    => 'Powerful Features', 
+            ),
+            array(
+                'id'      => 'all_features_content',
+                'type'    => 'textarea', 
+                'title'    => __( 'All Features Content', 'redux-framework-demo' ),
+                'desc'     => __( 'Add All Features Content here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add All Features Content', 'redux-framework-demo' ), 
+                'default'    => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates esse, sunt reprehenderit', 
+            ),
+        )
+    ) );
+    
+    ## Testimonials
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'Testimonials', 'redux-framework-demo' ),
+        'desc'       => __( 'You can find Testimonials Here ', 'redux-framework-demo' ),
+        'id'         => 'Testimonials_manager',
+        'subsection' => true,
+        'fields' => array(
+            array(
+                'id'      => 'testimonials_star',
+                'type'    => 'option', 
+                'title'    => __( 'Testimonials Star', 'redux-framework-demo' ),
+                'desc'     => __( 'Add Testimonials Star here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Testimonials Star.', 'redux-framework-demo' ), 
+                'default'    => '5', 
+            ),
+            array(
+                'id'      => 'testimonials_client_image',
+                'type'    => 'media', 
+                'title'    => __( 'Client Image', 'redux-framework-demo' ),
+                'desc'     => __( 'Upload Client Image here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Upload Client Image Image.', 'redux-framework-demo' ), 
+                'default'    => '//localhost/themeDev/practise_theme/wp-content/uploads/2020/11/concept.png', 
+            ), 
+            array(
+                'id'      => 'testimonials_client_name',
+                'type'    => 'text', 
+                'title'    => __( 'Client Name', 'redux-framework-demo' ),
+                'desc'     => __( 'Add Client Name here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add Client Name.', 'redux-framework-demo' ), 
+                'default'    => 'Mahmudul Hasan', 
+            ),
+            array(
+                'id'      => 'testimonials_client_designation',
+                'type'    => 'text', 
+                'title'    => __( 'Client Designation', 'redux-framework-demo' ),
+                'desc'     => __( 'Add Client Designation here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add Client Designation.', 'redux-framework-demo' ), 
+                'default'    => 'Software Developer', 
+            ),
+            array(
+                'id'      => 'testimonials_client_content',
+                'type'    => 'textarea', 
+                'title'    => __( 'Testimonials Client Content', 'redux-framework-demo' ),
+                'desc'     => __( 'Add All Testimonials Client here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add All Testimonials Client', 'redux-framework-demo' ), 
+                'default'    => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates esse, sunt reprehenderit', 
+            ),
+        )
+    ) );
+ 
 
     /*
      * <--- END SECTIONS
