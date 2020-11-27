@@ -10,7 +10,7 @@
     }
 
     // This is your option name where all the Redux data is stored.
-    $opt_name = "redux_demo";
+    $opt_name = "mobster_demo";
 
     /**
      * ---> SET ARGUMENTS
@@ -32,8 +32,8 @@
         //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
         'allow_sub_menu'       => true,
         // Show the sections below the admin menu item or not
-        'menu_title'           => __( 'Sample Options', 'redux-framework-demo' ),
-        'page_title'           => __( 'Sample Options', 'redux-framework-demo' ),
+        'menu_title'           => __( 'Mobster Options', 'redux-framework-demo' ),
+        'page_title'           => __( 'Mobster Options', 'redux-framework-demo' ),
         // You will need to generate a Google API key to use this feature.
         // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
         'google_api_key'       => '',
@@ -51,7 +51,7 @@
         // Choose an priority for the admin bar menu
         'global_variable'      => '',
         // Set a different name for your global variable other than the opt_name
-        'dev_mode'             => true,
+        'dev_mode'             => false,
         // Show the time the page took to load, etc
         'update_notice'        => true,
         // If dev_mode is enabled, will notify developer of updated versions available in the GitHub Repo
@@ -238,9 +238,9 @@
 
     // -> START Basic Fields
     Redux::setSection( $opt_name, array(
-        'title'  => __( 'Basic Field', 'redux-framework-demo' ),
+        'title'  => __( 'General Settings', 'redux-framework-demo' ),
         'id'     => 'basic',
-        'desc'   => __( 'Basic field with no subsections.', 'redux-framework-demo' ),
+        'desc'   => __( 'Change General Settings here.', 'redux-framework-demo' ),
         'icon'   => 'el el-home',
         'fields' => array(
             array(
@@ -257,9 +257,9 @@
     ) );
 
     Redux::setSection( $opt_name, array(
-        'title' => __( 'Basic Fields', 'redux-framework-demo' ),
+        'title' => __( 'General Settings', 'redux-framework-demo' ),
         'id'    => 'basic',
-        'desc'  => __( 'Basic fields as subsections.', 'redux-framework-demo' ),
+        'desc'  => __( 'Change General Settings here.', 'redux-framework-demo' ),
         'icon'  => 'el el-home'
     ) );
 

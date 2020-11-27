@@ -138,18 +138,35 @@ add_action( 'widgets_init', 'mobster_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
- */
-function mobster_scripts() {
-	wp_enqueue_style( 'mobster-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'mobster-style', 'rtl', 'replace' );
+ */ 
+if ( ! function_exists( 'mobster_scripts' ) ) :
+	function mobster_scripts() {
 
-	wp_enqueue_script( 'mobster-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+		wp_enqueue_style( 'mobster-maicons', get_template_directory_uri() .'/assets/css/maicons.css' );
+		wp_enqueue_style( 'mobster-animate', get_template_directory_uri() .'/assets/vendor/animate/animate.css' );
+		wp_enqueue_style( 'mobster-owl-carousel', get_template_directory_uri() .'/assets/vendor/owl-carousel/css/owl.carousel.min.css' );
+		wp_enqueue_style( 'mobster-bootstrap', get_template_directory_uri() .'/assets/css/bootstrap.css' , array(), '4.5.0', 'all' );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+		## style.css bellow
+		wp_enqueue_style( 'mobster-style', get_stylesheet_uri(), array(), _S_VERSION );
+		wp_style_add_data( 'mobster-style', 'rtl', 'replace' );
+
+		## Scripts
+		// wp_enqueue_script( 'jquery');
+		wp_enqueue_script( 'mobster-jquery', get_template_directory_uri() . '/assets/js/jquery-3.5.1.min.js', array(), '3.5.1', false );
+		wp_enqueue_script( 'mobster-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), '4.5.0', false );
+		wp_enqueue_script( 'mobster-owl-carousel', get_template_directory_uri() . '/assets/vendor/owl-carousel/js/owl.carousel.min.js', array(), '123456', false );
+		wp_enqueue_script( 'mobster-wow', get_template_directory_uri() . '/assets/vendor/wow/wow.min.js', array(), '123456', false );
+		wp_enqueue_script( 'mobster-js', get_template_directory_uri() . '/assets/js/mobster.js', array(), '123456', false );
+
+		wp_enqueue_script( 'mobster-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
 	}
-}
-add_action( 'wp_enqueue_scripts', 'mobster_scripts' );
+	add_action( 'wp_enqueue_scripts', 'mobster_scripts' );
+endif;
 
 /**
  * Implement the Custom Header feature.
@@ -179,9 +196,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- *  Load Redux Framework
+ *   Activate Redux Framework
  */ 
 if(!class_exists("ReduxFrameworkPlugin")){
     require_once(get_template_directory()."/libs/redux-framework/redux-framework.php");
-    require_once(get_template_directory()."/libs/redux-framework/sample/sample-config.php");
+    require_once(get_template_directory()."/inc/mobster-options.php");
 }
