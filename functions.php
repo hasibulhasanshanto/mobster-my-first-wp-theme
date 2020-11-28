@@ -145,8 +145,9 @@ if ( ! function_exists( 'mobster_scripts' ) ) :
 		wp_enqueue_style( 'mobster-maicons', get_template_directory_uri() .'/assets/css/maicons.css' );
 		wp_enqueue_style( 'mobster-animate', get_template_directory_uri() .'/assets/vendor/animate/animate.css' );
 		wp_enqueue_style( 'mobster-owl-carousel', get_template_directory_uri() .'/assets/vendor/owl-carousel/css/owl.carousel.min.css' );
-		wp_enqueue_style( 'mobster-bootstrap', get_template_directory_uri() .'/assets/css/bootstrap.css' , array(), '4.5.0', 'all' );
-
+		wp_enqueue_style( 'mobster-bootstrap', get_template_directory_uri() .'/assets/css/bootstrap.css' , array(), '4.5.0', 'all' ); 
+		
+		add_action('admin_head', 'add_styles');
 		## style.css bellow
 		wp_enqueue_style( 'mobster-style', get_stylesheet_uri(), array(), _S_VERSION );
 		wp_style_add_data( 'mobster-style', 'rtl', 'replace' );

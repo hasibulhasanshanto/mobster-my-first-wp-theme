@@ -294,35 +294,31 @@
 
     ## Services Layout
     Redux::setSection( $opt_name, array(
-        'title'      => __( 'Services Layout', 'redux-framework-demo' ),
-        'desc'       => __( 'You can find Services Layouts Here ', 'redux-framework-demo' ),
+        'title'      => __( 'Services Layout', 'redux-framework-demo' ), 
         'id'         => 'services_layout_manager',
         'subsection' => true,
-        'fields' => array(
+        'fields' => array( 
             array(
-                'id'      => 'services-image',
-                'type'    => 'media', 
-                'title'    => __( 'Service Image', 'redux-framework-demo' ),
-                'desc'     => __( 'Upload service image here for your services.', 'redux-framework-demo' ),
-                'subtitle' => __( 'Upload Service Image.', 'redux-framework-demo' ), 
-                'default'    => '//localhost/themeDev/practise_theme/wp-content/uploads/2020/11/concept.png', 
-            ),
-            array(
-                'id'      => 'services-title',
+                'id'      => 'services_section_title',
                 'type'    => 'text', 
-                'title'    => __( 'Service Title', 'redux-framework-demo' ),
-                'desc'     => __( 'Add your Service Title here for your services.', 'redux-framework-demo' ),
-                'subtitle' => __( 'Add your Service Title.', 'redux-framework-demo' ), 
-                'default'    => 'Secure Payment', 
-            ),
+                'title'    => __( 'Service Section Title', 'redux-framework-demo' ),
+                'desc'     => __( 'Add your Service Section Title here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add your Service Section Title.', 'redux-framework-demo' ), 
+                'default'    => 'Our Main Features', 
+            ), 
             array(
-                'id'      => 'services-content',
-                'type'    => 'textarea', 
-                'title'    => __( 'Service Content', 'redux-framework-demo' ),
-                'desc'     => __( 'Add Service Content here for your services.', 'redux-framework-demo' ),
-                'subtitle' => __( 'Add Service Content', 'redux-framework-demo' ), 
-                'default'    => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates esse, sunt reprehenderit', 
-            ),
+                'id'      => 'service_sliders',
+                'type'    => 'slides', 
+                'title'    => __( 'Service Slides', 'redux-framework-demo' ),
+                'desc'     => __( 'Add your Service Slides here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add your Service Slides.', 'redux-framework-demo' ), 
+                'desc'        => __( 'This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo' ), 
+                'placeholder' => array(
+                    'title'           => __('Service Slides title', 'redux-framework-demo'),
+                    'description'     => __('Service Slides Description', 'redux-framework-demo'),
+                    'url'             => __('WOW animation name!', 'redux-framework-demo'),
+                ),
+            ), 
         )
     ) );
 
@@ -334,15 +330,15 @@
         'subsection' => true,
         'fields' => array(
             array(
-                'id'      => 'bussiness-image',
+                'id'      => 'bussiness_image_left',
                 'type'    => 'media', 
                 'title'    => __( 'Bussiness Image', 'redux-framework-demo' ),
                 'desc'     => __( 'Upload Bussiness image here for your services.', 'redux-framework-demo' ),
                 'subtitle' => __( 'Upload Bussiness Image.', 'redux-framework-demo' ), 
-                'default'    => '//localhost/themeDev/practise_theme/wp-content/uploads/2020/11/concept.png', 
+                'default'    => 'http://localhost/themeDev/practise_theme/wp-content/uploads/2020/11/concept.png', 
             ),
             array(
-                'id'      => 'bussiness-title',
+                'id'      => 'bussiness_title',
                 'type'    => 'text', 
                 'title'    => __( 'Bussiness Title', 'redux-framework-demo' ),
                 'desc'     => __( 'Add your Bussiness Title here for your services.', 'redux-framework-demo' ),
@@ -350,7 +346,7 @@
                 'default'    => 'Secure Payment', 
             ),
             array(
-                'id'      => 'bussiness-content',
+                'id'      => 'bussiness_content',
                 'type'    => 'textarea', 
                 'title'    => __( 'Bussiness Content', 'redux-framework-demo' ),
                 'desc'     => __( 'Add Bussiness Content here for your services.', 'redux-framework-demo' ),
@@ -358,7 +354,7 @@
                 'default'    => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates esse, sunt reprehenderit', 
             ),
             array(
-                'id'      => 'bussiness-button-link',
+                'id'      => 'bussiness_button_link',
                 'type'    => 'text', 
                 'title'    => __( 'Bussiness Link', 'redux-framework-demo' ),
                 'desc'     => __( 'Add your Bussiness Link here for your services.', 'redux-framework-demo' ),
@@ -366,9 +362,9 @@
                 'default'    => 'https://www.facebook.com/', 
             ),
             array(
-                'id'      => 'bussiness-button',
+                'id'      => 'bussiness_button_text',
                 'type'    => 'text', 
-                'title'    => __( 'Service Button', 'redux-framework-demo' ),
+                'title'    => __( 'Service Button Text', 'redux-framework-demo' ),
                 'desc'     => __( 'Add your Bussiness Button here for your services.', 'redux-framework-demo' ),
                 'subtitle' => __( 'Add your Bussiness Button.', 'redux-framework-demo' ), 
                 'default'    => 'See Addons', 
@@ -378,43 +374,44 @@
 
     ## All Features
     Redux::setSection( $opt_name, array(
-        'title'      => __( 'All Features', 'redux-framework-demo' ),
-        'desc'       => __( 'You can find All Features Here ', 'redux-framework-demo' ),
-        'id'         => 'all_features_manager',
+        'title'      => __( 'Features Layout', 'redux-framework-demo' ), 
+        'id'         => 'features_layout_manager',
         'subsection' => true,
-        'fields' => array(
-            array(
-                'id'      => 'all_features_image',
+        'fields' => array( 
+             array(
+                'id'      => 'features_layout_img_center',
                 'type'    => 'media', 
-                'title'    => __( 'All Features Image', 'redux-framework-demo' ),
-                'desc'     => __( 'Upload All Features image here for your services.', 'redux-framework-demo' ),
-                'subtitle' => __( 'Upload All Features Image.', 'redux-framework-demo' ), 
-                'default'    => '//localhost/themeDev/practise_theme/wp-content/uploads/2020/11/concept.png', 
+                'title'    => __( 'Features Image', 'redux-framework-demo' ),
+                'desc'     => __( 'Upload Features image here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Upload Features Image.', 'redux-framework-demo' ), 
+                'default'    => 'http://localhost/themeDev/practise_theme/wp-content/uploads/2020/11/concept.png', 
             ),
             array(
-                'id'      => 'all_features_icon_image',
-                'type'    => 'media', 
-                'title'    => __( 'All Features Icon Image', 'redux-framework-demo' ),
-                'desc'     => __( 'Upload All Features Icon  image here for your services.', 'redux-framework-demo' ),
-                'subtitle' => __( 'Upload All Features Icon  Image.', 'redux-framework-demo' ), 
-                'default'    => '//localhost/themeDev/practise_theme/wp-content/uploads/2020/11/concept.png', 
-            ),
+                'id'      => 'features_sliders_left',
+                'type'    => 'slides', 
+                'title'    => __( 'Feature Slides Left (3 Item)', 'redux-framework-demo' ),
+                'desc'     => __( 'Add your Feature Slides here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add your Feature Slides.', 'redux-framework-demo' ), 
+                'desc'        => __( 'This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo' ),  
+                'placeholder' => array(
+                    'title'           => __('Feature Slides title', 'redux-framework-demo'),
+                    'description'     => __('Feature Slides Description', 'redux-framework-demo'),
+                    'url'             => __('Icon Class Input Here!', 'redux-framework-demo'),
+                ),
+            ), 
             array(
-                'id'      => 'all_features_title',
-                'type'    => 'text', 
-                'title'    => __( 'All Features Title', 'redux-framework-demo' ),
-                'desc'     => __( 'Add your All Features Title here for your services.', 'redux-framework-demo' ),
-                'subtitle' => __( 'Add your All Features Title.', 'redux-framework-demo' ), 
-                'default'    => 'Powerful Features', 
-            ),
-            array(
-                'id'      => 'all_features_content',
-                'type'    => 'textarea', 
-                'title'    => __( 'All Features Content', 'redux-framework-demo' ),
-                'desc'     => __( 'Add All Features Content here for your services.', 'redux-framework-demo' ),
-                'subtitle' => __( 'Add All Features Content', 'redux-framework-demo' ), 
-                'default'    => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates esse, sunt reprehenderit', 
-            ),
+                'id'      => 'features_sliders_right',
+                'type'    => 'slides', 
+                'title'    => __( 'Feature Slides Right (3 Item)', 'redux-framework-demo' ),
+                'desc'     => __( 'Add your Feature Slides here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Add your Feature Slides.', 'redux-framework-demo' ), 
+                'desc'        => __( 'This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo' ),  
+                'placeholder' => array(
+                    'title'           => __('Feature Slides title', 'redux-framework-demo'),
+                    'description'     => __('Feature Slides Description', 'redux-framework-demo'),
+                    'url'             => __('Icon Class Input Here!', 'redux-framework-demo'),
+                ),
+            ), 
         )
     ) );
     
