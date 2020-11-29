@@ -1,9 +1,14 @@
+<?php 
+  global $mobster_options;
+  $testimonials_top_title = $mobster_options['testimonials_top_title']; 
+  $testimonials_star = $mobster_options['testimonials_star'];   
+?>
 <!-- Testimonials -->
 <div class="page-section">
   <div class="container">
     <div class="row justify-content-center text-center">
       <div class="col-lg-6 wow fadeIn">
-        <h2>Meet client satisfaction by using product</h2>
+        <h2><?php echo $testimonials_top_title; ?></h2>
       </div>
     </div>
   </div>

@@ -415,19 +415,61 @@
         )
     ) );
     
+    ## Pricing
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'Pricing', 'redux-framework-demo' ),
+        'desc'       => __( 'You can find Pricing Here ', 'redux-framework-demo' ),
+        'id'         => 'pricing_manager',
+        'subsection' => true,
+        'fields' => array(
+            
+            array(
+                'id'      => 'pricing_area_title_top',
+                'type'    => 'text', 
+                'title'    => __( 'Pricing Section Title', 'redux-framework-demo' ),
+                'desc'     => __( 'Pricing Section Title here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pricing Section Title.', 'redux-framework-demo' ), 
+                'default'    => 'Get awesome features, without extra charges', 
+            ),
+            array(
+                'id'      => 'pricing_area_content',
+                'type'    => 'textarea', 
+                'title'    => __( 'Pricing Section Content', 'redux-framework-demo' ),
+                'desc'     => __( 'Pricing Section Content here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Pricing Section Content', 'redux-framework-demo' ), 
+                'default'    => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores non magnam, quis aliquid dolor magni', 
+            )
+        )
+    ) );
+
     ## Testimonials
     Redux::setSection( $opt_name, array(
         'title'      => __( 'Testimonials', 'redux-framework-demo' ),
         'desc'       => __( 'You can find Testimonials Here ', 'redux-framework-demo' ),
-        'id'         => 'Testimonials_manager',
+        'id'         => 'testimonials_manager',
         'subsection' => true,
         'fields' => array(
             array(
+                'id'      => 'testimonials_top_title',
+                'type'    => 'text', 
+                'title'    => __( 'Testimonial Section Title', 'redux-framework-demo' ),
+                'desc'     => __( 'Testimonial Section Title here for your services.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Testimonial Section Title', 'redux-framework-demo' ), 
+                'default'    => 'Meet client satisfaction by using product', 
+            ),
+            array(
                 'id'      => 'testimonials_star',
-                'type'    => 'option', 
+                'type'    => 'select', 
                 'title'    => __( 'Testimonials Star', 'redux-framework-demo' ),
                 'desc'     => __( 'Add Testimonials Star here for your services.', 'redux-framework-demo' ),
                 'subtitle' => __( 'Testimonials Star.', 'redux-framework-demo' ), 
+                 'options'  => array(
+                    '1' => '1 Star',
+                    '2' => '2 Star',
+                    '3' => '3 Star',
+                    '4' => '4 Star',
+                    '5' => '5 Star',
+                ),
                 'default'    => '5', 
             ),
             array(
@@ -460,8 +502,26 @@
                 'title'    => __( 'Testimonials Client Content', 'redux-framework-demo' ),
                 'desc'     => __( 'Add All Testimonials Client here for your services.', 'redux-framework-demo' ),
                 'subtitle' => __( 'Add All Testimonials Client', 'redux-framework-demo' ), 
-                'default'    => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates esse, sunt reprehenderit', 
+                'default'    => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem distinctio esse eum laudantium necessitatibus autem perferendis quod ipsum eaque.', 
             ),
+        )
+    ) );
+
+
+    ## Partners
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'Partners', 'redux-framework-demo' ),
+        'desc'       => __( 'You can find Partners Here ', 'redux-framework-demo' ),
+        'id'         => 'partners_manager',
+        'subsection' => true,
+        'fields' => array(
+            array(
+                'id'       => 'partners_gallery',
+                'type'     => 'gallery',
+                'title'    => __('Add/Edit Gallery', 'redux-framework-demo'),
+                'subtitle' => __('Create a new Gallery by selecting existing or uploading new images using the WordPress native uploader', 'redux-framework-demo'),
+                'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            )
         )
     ) );
  

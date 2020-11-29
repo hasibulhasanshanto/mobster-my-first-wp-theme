@@ -1,10 +1,15 @@
+<?php 
+  global $mobster_options;
+  $pricing_area_title_top = $mobster_options['pricing_area_title_top']; 
+  $pricing_area_content = $mobster_options['pricing_area_content'];   
+?>
 <!-- Pricing Table -->
 <div class="page-section">
   <div class="container">
     <div class="row justify-content-center text-center wow fadeInUp">
       <div class="col-lg-6">
-        <h2 class="mb-3">Get awesome features, without extra charges</h2>
-        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores non magnam, quis aliquid dolor magni</p>
+        <h2 class="mb-3"><?php echo $pricing_area_title_top; ?></h2>
+        <p class="mb-5"><?php echo $pricing_area_content; ?></p>
 
         <div class="btn-group btn-group-toggle rounded-pill btn-switch" data-toggle="buttons">
           <label class="btn active">
